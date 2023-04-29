@@ -7,15 +7,31 @@ public class Meteor : Enemy
     [SerializeField] private float minSpeed;
     [SerializeField] private float maxSpeed;
     private float speed;
+    [SerializeField] private float minRotateSpeed;
+    [SerializeField] private float maxRotateSpeed;
+    private float rotateSpeed;
+    private bool rotateClockwise;
 
     void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed);
+        rotateSpeed = Random.Range(minRotateSpeed, maxRotateSpeed);
+        rotateClockwise = Random.Range(0, 2) == 0;
+
         rb.velocity = Vector2.down * speed;
     }
 
     void Update()
     {
+        if (rotateClockwise)
+        {
+            transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
+        }
+
 
     }
 
@@ -26,13 +42,20 @@ public class Meteor : Enemy
     public override void DeathSequence()
     {
         // do something
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Hit player!");
             Destroy(collider.gameObject);
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
