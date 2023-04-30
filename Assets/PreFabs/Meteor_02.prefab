@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7149622088091417065}
   - component: {fileID: 55919843150803629}
   - component: {fileID: 3855851310127480318}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Meteor_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 25021b83ffd2d4a5a81d2028f98c26d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
