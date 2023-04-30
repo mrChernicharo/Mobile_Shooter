@@ -41,7 +41,7 @@ public class Meteor : Enemy
     }
     public override void DeathSequence()
     {
-        // do something
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
@@ -49,8 +49,10 @@ public class Meteor : Enemy
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit player!");
-            Destroy(collider.gameObject);
+            PlayerStats player = collider.GetComponent<PlayerStats>();
+            player.PlayerTakeDamage(damage);
+            Instantiate(explosionPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 

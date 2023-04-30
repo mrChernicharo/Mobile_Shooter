@@ -11,15 +11,18 @@ public class LaserBullet : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = Vector2.up * speed;    
+        rb.velocity = Vector2.up * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit enemy!");
-        Enemy enemy = collision.GetComponent<Enemy>();
-        enemy.TakeDamage(damage);
-        Destroy(gameObject);
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit enemy!");
+            Enemy enemy = collision.GetComponent<Enemy>();
+            enemy.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 
     private void OnBecameInvisible()

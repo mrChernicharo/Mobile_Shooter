@@ -137,7 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  damage: 1
   rb: {fileID: 643212778434044299}
+  explosionPrefab: {fileID: 8056695242212950067, guid: 054b64dff985c48d0a1dc67be6b1a640, type: 3}
   minSpeed: 7.4
   maxSpeed: 18.1
   minRotateSpeed: 42.3
