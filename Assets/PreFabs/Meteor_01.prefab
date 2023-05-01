@@ -136,11 +136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d876f10a0add44cbba5730da12c478cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 3
   damage: 1
   rb: {fileID: 6997813169883186826}
   explosionPrefab: {fileID: 8056695242212950067, guid: 054b64dff985c48d0a1dc67be6b1a640, type: 3}
-  minSpeed: 4.03
-  maxSpeed: 13.42
+  animator: {fileID: 0}
+  minSpeed: 5
+  maxSpeed: 12
   minRotateSpeed: 20
-  maxRotateSpeed: 100
+  maxRotateSpeed: 200
