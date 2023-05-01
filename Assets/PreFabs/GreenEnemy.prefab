@@ -236,6 +236,7 @@ MonoBehaviour:
   animator: {fileID: 6346627429453589520}
   minSpeed: 3
   maxSpeed: 7
+  meuPau: -1.81
 --- !u!95 &6346627429453589520
 Animator:
   serializedVersion: 5

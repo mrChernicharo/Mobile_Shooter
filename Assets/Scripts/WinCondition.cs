@@ -10,23 +10,22 @@ public class WinCondition : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (EndGameManager.instance.gameOver == true) return;
+
         timer += Time.deltaTime;
         if (timer >= possibleWinTime)
         {
-            for(int i=0; i < spawners.Length; i++)
+            for (int i = 0; i < spawners.Length; i++)
             {
                 spawners[i].SetActive(false);
             }
 
-            // check if player survived the kast spawned enemy/meteor
-
-            // win or lose 
             EndGameManager.instance.StartResolveSequence();
             gameObject.SetActive(false);
         }

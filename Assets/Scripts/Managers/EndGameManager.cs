@@ -11,7 +11,14 @@ public class EndGameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -27,7 +34,7 @@ public class EndGameManager : MonoBehaviour
 
     private IEnumerator ResolveSequence()
     {
-        yield return new WaitForSeconds(2.4f);
+        yield return new WaitForSeconds(2.5f);
         ResolveGame();
     }
 
