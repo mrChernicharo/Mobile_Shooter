@@ -45,6 +45,7 @@ public class PurpleEnemy : Enemy
 
     public override void HurtSequence()
     {
+        base.HurtSequence();
         // prevent anim spam: check if animation is currently running, don't activate it again
         if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Dmg")) return;
         animator.SetTrigger("EnemyDamage");
@@ -52,6 +53,7 @@ public class PurpleEnemy : Enemy
 
     public override void DeathSequence()
     {
+        base.DeathSequence();
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }

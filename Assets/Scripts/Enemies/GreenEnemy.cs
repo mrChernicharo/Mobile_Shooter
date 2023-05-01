@@ -17,11 +17,14 @@ public class GreenEnemy : Enemy
 
     public override void HurtSequence()
     {
+        base.HurtSequence();
         if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Dmg")) return;
         animator.SetTrigger("Damage");
     }
     public override void DeathSequence()
     {
+
+        base.DeathSequence();
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }

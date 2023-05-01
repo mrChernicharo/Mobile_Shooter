@@ -234,9 +234,9 @@ MonoBehaviour:
   rb: {fileID: 5507961242599638129}
   explosionPrefab: {fileID: 8056695242212950067, guid: 054b64dff985c48d0a1dc67be6b1a640, type: 3}
   animator: {fileID: 6346627429453589520}
+  scoreValue: 100
   minSpeed: 3
   maxSpeed: 7
-  meuPau: -1.81
 --- !u!95 &6346627429453589520
 Animator:
   serializedVersion: 5
