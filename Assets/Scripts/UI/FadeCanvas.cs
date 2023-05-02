@@ -66,7 +66,7 @@ public class FadeCanvas : MonoBehaviour
         }
 
         //SceneManager.LoadScene(levelName);
-
+        Debug.Log($"FadeOutString {levelName}");
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName);
         ao.allowSceneActivation = false;
         loadingScreen.SetActive(true);

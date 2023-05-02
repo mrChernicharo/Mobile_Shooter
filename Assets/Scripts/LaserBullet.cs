@@ -18,7 +18,6 @@ public class LaserBullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Hit enemy!");
             Enemy enemy = collision.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
             Destroy(gameObject);
