@@ -146,3 +146,4 @@ MonoBehaviour:
   maxSpeed: 12
   minRotateSpeed: 20
   maxRotateSpeed: 200
+  powerUpSpawner: {fileID: 11400000, guid: 27b342e2dccee4214979b401f934d936, type: 2}

@@ -40,6 +40,15 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void PlayerAddHealth(int healAmount)
+    {
+        health += healAmount;
+        if (health > maxHealth)
+            health = maxHealth;
+
+        healthFill.fillAmount = health / maxHealth;
+    }
+
     private IEnumerator PreventDamageAnimationSpam()
     {
         canPlayAnim = false;
