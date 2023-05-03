@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PurpleBullet : MonoBehaviour
+public class MiniBullet : MonoBehaviour
 {
     [SerializeField] private float damage;
     [SerializeField] private float speed;
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
 
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.down * speed;
+        rb.velocity = transform.up * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

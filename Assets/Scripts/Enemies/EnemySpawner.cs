@@ -11,10 +11,12 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Enemy Prefabs")]
     [SerializeField] private GameObject[] enemies;
-
-    private float enemyTimer;
     [Space(15)]
     [SerializeField] private float enemySpawnTime;
+    private float enemyTimer;
+
+    [Header("Boss")]
+    [SerializeField] private GameObject bossPrefab;
 
     void Start()
     {

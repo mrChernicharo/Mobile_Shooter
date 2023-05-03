@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class WinCondition : MonoBehaviour
 {
+    public event System.Action OnReachedEndOfLevel;
+
     private float timer;
     [SerializeField] private float possibleWinTime;
     [SerializeField] private GameObject[] spawners;
+    [SerializeField] private bool hasBoss;
+
+
+
 
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (EndGameManager.instance.gameOver == true) return;
@@ -21,12 +26,21 @@ public class WinCondition : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= possibleWinTime)
         {
+            // disable spawners
             for (int i = 0; i < spawners.Length; i++)
             {
                 spawners[i].SetActive(false);
             }
 
-            EndGameManager.instance.StartResolveSequence();
+            if (hasBoss == false)
+            {
+                EndGameManager.instance.StartResolveSequence();
+            }
+            else if (OnReachedEndOfLevel != null)
+            {
+                OnReachedEndOfLevel();
+            }
+
             gameObject.SetActive(false);
         }
     }

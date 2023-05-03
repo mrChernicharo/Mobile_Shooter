@@ -46,5 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleWinTime: 20
   spawners:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5437083429312421381, guid: b36c13c13c70145cd934eea7bf2f477c, type: 3}
+  - {fileID: 5711482804674622648, guid: 7d21dbcdd7f444d2dbb2a4976eb53066, type: 3}
+  hasBoss: 1
