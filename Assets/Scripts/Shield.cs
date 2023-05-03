@@ -51,13 +51,11 @@ public class Shield : MonoBehaviour
     {
         if (collision.TryGetComponent(out Enemy enemy))
         {
-            Debug.Log("Hit enemy");
             enemy.TakeDamage(10);
             DamageShield();
         }
         else if (collision.CompareTag("EnemyBullet"))
         {
-            Debug.Log("Hit projectile");
             Destroy(collision.gameObject);
             DamageShield();
         }

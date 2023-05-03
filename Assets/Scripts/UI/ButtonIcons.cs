@@ -22,7 +22,6 @@ public class ButtonIcons : MonoBehaviour
                 lvlButtons[i].image.sprite = unlockedIcon;
 
                 TextMeshProUGUI buttonText = lvlButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-                Debug.Log("buttonText" + buttonText);
                 buttonText.text = (i + 1).ToString();
                 buttonText.enabled = true;
             }

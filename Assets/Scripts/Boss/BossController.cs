@@ -35,19 +35,15 @@ public class BossController : MonoBehaviour
 		switch (state)
 		{
 			case BossState.enter:
-				Debug.Log("Do enter");
 				bossEnter.RunState();
 				break;
             case BossState.fire:
-                Debug.Log("Do fire");
 				bossFire.RunState();
                 break;
             case BossState.special:
-                Debug.Log("Do special");
 				bossSpecial.RunState();
                 break;
             case BossState.death:
-                Debug.Log("Do death");
 				bossEnter.StopState();
 				bossFire.StopState();
                 bossSpecial.StopState();
