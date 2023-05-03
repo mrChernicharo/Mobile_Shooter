@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private Animator animator;
     [SerializeField] private Shield shield;
+    [SerializeField] private PlayerShooting playerShooting;
     private bool canPlayAnim = true;
 
     void Start()
@@ -19,6 +20,7 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         healthFill.fillAmount = health / maxHealth;
         EndGameManager.instance.gameOver = false;
+        playerShooting = GetComponent<PlayerShooting>();
     }
 
     public void PlayerTakeDamage(float damage)
@@ -27,6 +29,7 @@ public class PlayerStats : MonoBehaviour
 
         health -= damage;
         healthFill.fillAmount = health / maxHealth;
+        playerShooting.DecreaseUpgrade();
 
         if (canPlayAnim)
         {

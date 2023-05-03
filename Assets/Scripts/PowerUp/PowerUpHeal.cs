@@ -5,10 +5,7 @@ using UnityEngine;
 public class PowerUpHeal : MonoBehaviour
 {
     [SerializeField] private int healAmount;
-    void Start()
-    {
-        
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -18,5 +15,10 @@ public class PowerUpHeal : MonoBehaviour
             // maybe play some sound or animation
             Destroy(gameObject);
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

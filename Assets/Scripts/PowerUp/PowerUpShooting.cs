@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpShield : MonoBehaviour
+public class PowerUpShooting : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            ShieldActivator shieldActivator = collision.GetComponent<ShieldActivator>();
-            shieldActivator.ActivateShield();
+            PlayerShooting player = collision.GetComponent<PlayerShooting>();
+            player.IncreaseUpgrade(1);
             Destroy(gameObject);
         }
     }
@@ -18,4 +18,5 @@ public class PowerUpShield : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 }
