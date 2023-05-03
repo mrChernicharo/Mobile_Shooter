@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - LaserBullet
   - EnemyBullet
+  - Shield
   layers:
   - Default
   - TransparentFX
