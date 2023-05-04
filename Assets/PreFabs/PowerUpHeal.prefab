@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 2
+  clipToPlay: {fileID: 8300000, guid: 9632fa56681654ed2b3de1991bcb9680, type: 3}

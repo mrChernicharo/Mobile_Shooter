@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da6d216e3e264ad59d9e40d4a7f74c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleWinTime: 20
+  possibleWinTime: 10
   spawners:
-  - {fileID: 5437083429312421381, guid: b36c13c13c70145cd934eea7bf2f477c, type: 3}
-  - {fileID: 5711482804674622648, guid: 7d21dbcdd7f444d2dbb2a4976eb53066, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   hasBoss: 1

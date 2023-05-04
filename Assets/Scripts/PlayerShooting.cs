@@ -25,6 +25,8 @@ public class PlayerShooting : MonoBehaviour
     private float intervalReset;
     [SerializeField] private int upgradeLevel = 0;
 
+    [SerializeField] private AudioSource[] audioSources;
+
     void Start()
     {
         intervalReset = shootingInterval;
@@ -61,6 +63,8 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
+        StartCoroutine(playLaserSounds());
+
         switch (upgradeLevel)
         {
             case 0:
@@ -93,6 +97,20 @@ public class PlayerShooting : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    IEnumerator playLaserSounds()
+    {
+        float playTimes = 1;
+        if (upgradeLevel > 3) playTimes = 3;
+        else if (upgradeLevel > 1) playTimes = 2;
+
+        //if (audioSources.Length < 5) Debug.LogError("should have 1 audio source for each upgrade level");
+        for (int i = 0; i < playTimes; i++)
+        {
+            audioSources[i].Play();
+            yield return new WaitForSeconds(0.12f);
         }
     }
 }
