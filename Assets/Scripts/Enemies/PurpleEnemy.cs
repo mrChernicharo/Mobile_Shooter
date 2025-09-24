@@ -17,7 +17,7 @@ public class PurpleEnemy : Enemy
 
     void Start()
     {
-        rb.velocity = Vector2.down * speed;
+        rb.linearVelocity = Vector2.down * speed;
     }
 
     void Update()

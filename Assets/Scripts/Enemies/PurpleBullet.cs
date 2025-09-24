@@ -11,7 +11,7 @@ public class PurpleBullet : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.down * speed;
+        rb.linearVelocity = Vector2.down * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

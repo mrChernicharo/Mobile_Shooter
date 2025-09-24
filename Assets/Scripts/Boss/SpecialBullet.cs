@@ -14,7 +14,7 @@ public class SpecialBullet : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = Vector2.down * speed;
+        rb.linearVelocity = Vector2.down * speed;
         StartCoroutine(Explode());
     }
 

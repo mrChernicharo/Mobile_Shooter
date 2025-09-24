@@ -20,7 +20,7 @@ public class Meteor : Enemy
         rotateSpeed = Random.Range(minRotateSpeed, maxRotateSpeed);
         rotateClockwise = Random.Range(0, 2) == 0;
 
-        rb.velocity = Vector2.down * speed;
+        rb.linearVelocity = Vector2.down * speed;
     }
 
     void Update()

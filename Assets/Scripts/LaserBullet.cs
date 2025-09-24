@@ -11,7 +11,7 @@ public class LaserBullet : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = transform.up * speed;
+        rb.linearVelocity = transform.up * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

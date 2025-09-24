@@ -11,7 +11,7 @@ public class GreenEnemy : Enemy
     void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed);
-        rb.velocity = Vector2.down * speed;
+        rb.linearVelocity = Vector2.down * speed;
         
     }
 
